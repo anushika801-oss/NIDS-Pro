@@ -51,6 +51,9 @@ NIDS-Pro/
 ├── feature_engine.py
 ├── log_utils.py
 └── gui/
+
+```
+
 ## Dashboard
 
 ![NIDS Pro Dashboard](nids-dashboard.png)
