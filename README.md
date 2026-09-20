@@ -1,6 +1,43 @@
 # NIDS Pro — Network Intrusion Detection System
 
-NIDS Pro is a signature-based Network Intrusion Detection System designed to monitor network traffic and detect suspicious activities using rule-based detection.
+NIDS Pro is a signature-based Network Intrusion Detection System developed in Python to monitor network traffic and identify potentially suspicious activities using rule-based detection.
+
+The system captures network packets, extracts relevant network information, applies predefined detection rules, generates security alerts, stores alert information, and presents network activity through a monitoring dashboard.
+
+---
+
+## Overview
+
+NIDS Pro focuses on network traffic monitoring and basic intrusion detection using predefined signatures and traffic patterns.
+
+The system analyzes information such as:
+
+- Source IP address
+- Destination IP address
+- Source and destination ports
+- Network protocols
+- Traffic patterns
+- Suspicious port activity
+
+When a predefined rule is triggered, NIDS Pro generates an alert and records the detected activity.
+
+---
+
+## Objectives
+
+The main objectives of NIDS Pro are:
+
+- Monitor network traffic in real time
+- Analyze source and destination IP addresses
+- Monitor network protocols and ports
+- Detect potentially suspicious network activity
+- Identify port scanning activity
+- Generate security alerts
+- Store alert information for analysis
+- Provide a visual security monitoring dashboard
+- Generate basic security reports
+
+---
 
 ## Features
 
@@ -8,52 +45,50 @@ NIDS Pro is a signature-based Network Intrusion Detection System designed to mon
 - Source IP and destination IP analysis
 - Protocol and port monitoring
 - Signature-based intrusion detection
-- Suspicious activity alerts
+- Rule-based suspicious activity detection
 - Port scan detection
+- High-volume traffic detection
+- Security alerts
 - Network traffic statistics
+- Alert storage using SQLite
 - Security monitoring dashboard
 - Alert and report generation
+
+---
 
 ## Technologies & Tools
 
 - Python
-- PyQt6
+- CustomTkinter
 - Scapy
+- Matplotlib
+- NumPy
 - SQLite
 - Nmap
 - Linux / Kali Linux
 - Windows
 
-## Detection Rules
+---
 
-NIDS Pro uses rule-based detection for potentially risky network services and suspicious traffic patterns, including:
+## How NIDS Pro Works
 
-- Telnet — Port 23
-- FTP — Port 21
-- SSH — Port 22
-- HTTP — Port 80
-- HTTPS — Port 443
-- Port scanning activity
-- High-volume traffic / DoS patterns
-
-## Project Structure
+The basic workflow of NIDS Pro is:
 
 ```text
-NIDS-Pro/
-├── main.py
-├── detection.py
-├── packet_capture.py
-├── database.py
-├── alert.py
-├── analytics.py
-├── report.py
-├── config.py
-├── feature_engine.py
-├── log_utils.py
-└── gui/
-
-```
-
-## Dashboard
-
-![NIDS Pro Dashboard](nids-dashboard.png)
+Network Traffic
+      ↓
+Packet Capture
+      ↓
+Feature Extraction
+      ↓
+Detection Engine
+      ↓
+Rule-Based Analysis
+      ↓
+Suspicious Activity Detected
+      ↓
+Alert Generation
+      ↓
+Database / Logs
+      ↓
+Dashboard & Reports
