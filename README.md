@@ -92,30 +92,41 @@ Alert Generation
 Database / Logs
       ↓
 Dashboard & Reports
+```
+
 The packet capture module collects network packets using Scapy. Relevant packet information is extracted and passed to the detection engine. The detection engine compares the traffic against predefined rules and thresholds. When suspicious activity is detected, an alert is generated and the information can be stored for further analysis.
 
-Detection Rules
+---
+
+## Detection Rules
 
 NIDS Pro uses predefined rules and thresholds to identify potentially risky or suspicious traffic.
 
-Monitored Network Services
-Service	Port	Severity
-Telnet	23	High
-FTP	21	Medium
-SSH	22	Medium
-HTTP	80	Low
-HTTPS	443	Low
-Traffic-Based Detection
+### Monitored Network Services
+
+| Service | Port | Severity |
+|---|---:|---|
+| Telnet | 23 | High |
+| FTP | 21 | Medium |
+| SSH | 22 | Medium |
+| HTTP | 80 | Low |
+| HTTPS | 443 | Low |
+
+### Traffic-Based Detection
 
 The system also includes rule-based detection for:
 
-Port scanning activity
-High-volume traffic / DoS patterns
-Potentially risky network services
+- Port scanning activity
+- High-volume traffic / DoS patterns
+- Potentially risky network services
 
 These rules are signature-based and do not use machine learning.
 
-Project Structure
+---
+
+## Project Structure
+
+```text
 NIDS-Pro/
 │
 ├── main.py
@@ -147,120 +158,173 @@ NIDS-Pro/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
-Installation
-1. Clone the Repository
+```
+
+---
+
+## Installation
+
+### 1. Clone the Repository
+
+```bash
 git clone https://github.com/anushika801-oss/NIDS-Pro.git
+```
 
-Then move into the project directory:
+Move into the project directory:
 
+```bash
 cd NIDS-Pro
-2. Create a Virtual Environment
+```
+
+### 2. Create a Virtual Environment
+
+```bash
 python -m venv venv
+```
 
 Activate the virtual environment on Windows:
 
+```bash
 venv\Scripts\activate
-3. Install Dependencies
+```
 
-Install the required packages:
+### 3. Install Dependencies
 
+Install the required packages using:
+
+```bash
 pip install -r requirements.txt
+```
 
 The project dependencies are:
 
+```text
 scapy==2.7.0
 customtkinter==6.0.0
 matplotlib==3.11.0
 numpy==2.4.6
-Running the Project
+```
+
+---
+
+## Running the Project
 
 After installing the dependencies, run:
 
+```bash
 python main.py
+```
 
 The NIDS Pro monitoring dashboard will start.
 
-Testing the Detection System
+---
+
+## Testing the Detection System
 
 NIDS Pro can be tested by generating network traffic on the system where the application is running.
 
 For example:
 
+```bash
 ping 8.8.8.8
+```
 
 The captured traffic can then be displayed through the NIDS Pro dashboard.
 
 For security testing, the predefined detection rules can be triggered through appropriate network traffic and lab-based testing.
 
-Dashboard
+---
+
+## Dashboard
 
 The NIDS Pro dashboard provides a visual interface for monitoring network activity and security alerts.
 
+![NIDS Pro Dashboard](nids-dashboard.png)
+
 The dashboard includes:
 
-Network traffic monitoring
-Traffic statistics
-Security alerts
-Reports
-System settings
-Visual charts
-Alert and Report Generation
+- Network traffic monitoring
+- Traffic statistics
+- Security alerts
+- Reports
+- System settings
+- Visual charts
+
+---
+
+## Alert and Report Generation
 
 When suspicious traffic is detected, NIDS Pro generates security alerts based on the configured detection rules.
 
 The project also provides functionality for storing alert information and generating reports for further analysis.
 
-Database
+---
+
+## Database
 
 NIDS Pro uses SQLite for local storage of alert-related information.
 
 The database helps maintain detected security events so they can be accessed by the application's reporting and analysis components.
 
-Security Concepts Demonstrated
+---
+
+## Security Concepts Demonstrated
 
 This project demonstrates practical concepts related to:
 
-Network Intrusion Detection
-Packet Capture
-Network Traffic Analysis
-TCP/IP Networking
-Ports and Protocols
-Signature-Based Detection
-Rule-Based Detection
-Port Scan Detection
-Security Alerting
-Log Management
-Basic Network Security Monitoring
-Limitations
-Detection is based on predefined signatures and rules.
-The system does not use machine learning for threat detection.
-Detection capability depends on the configured rules and thresholds.
-It is intended as an educational and project-level NIDS rather than a complete enterprise security monitoring solution.
-Network packet capture may require appropriate permissions depending on the operating system.
-Future Enhancements
+- Network Intrusion Detection
+- Packet Capture
+- Network Traffic Analysis
+- TCP/IP Networking
+- Ports and Protocols
+- Signature-Based Detection
+- Rule-Based Detection
+- Port Scan Detection
+- Security Alerting
+- Log Management
+- Basic Network Security Monitoring
+
+---
+
+## Limitations
+
+- Detection is based on predefined signatures and rules.
+- The system does not use machine learning for threat detection.
+- Detection capability depends on the configured rules and thresholds.
+- It is intended as an educational and project-level NIDS rather than a complete enterprise security monitoring solution.
+- Network packet capture may require appropriate permissions depending on the operating system.
+
+---
+
+## Future Enhancements
 
 Possible future improvements include:
 
-More comprehensive detection signatures
-Additional protocol analysis
-Improved alert classification
-Advanced traffic analytics
-More detailed reporting
-Email or external notification integration
-Enhanced dashboard visualizations
-Support for additional security monitoring features
-Author
+- More comprehensive detection signatures
+- Additional protocol analysis
+- Improved alert classification
+- Advanced traffic analytics
+- More detailed reporting
+- Email or external notification integration
+- Enhanced dashboard visualizations
+- Support for additional security monitoring features
 
-Anushika
+---
+
+## Author
+
+**Anushika**
 
 BCA Student | Cybersecurity | Networking | IT Security
 
-GitHub:
+GitHub:  
 https://github.com/anushika801-oss
 
-LinkedIn:
+LinkedIn:  
 https://linkedin.com/in/anushika0208
 
-Conclusion
+---
+
+## Conclusion
 
 NIDS Pro demonstrates the implementation of a signature-based Network Intrusion Detection System using Python. It combines packet capture, feature extraction, rule-based detection, alert generation, database storage, and dashboard visualization to provide a basic platform for monitoring network security events.
